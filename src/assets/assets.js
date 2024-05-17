@@ -79,7 +79,7 @@ export const plat_list = [
         menu_image: menu_2
     },
     {
-        menu_name: "nintendo switch",
+        menu_name: "ns",
         menu_image: menu_3
     },
     {

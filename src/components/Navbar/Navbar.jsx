@@ -20,9 +20,6 @@ const Navbar = ({setShowLogin}) => {
         <ul className='navbar-menu'>
           <li onClick={()=>setMenu("home")} className={menu=="home"?"active":""}><Link to='/'>Home</Link></li>
           <a href='#explore-menu' onClick={()=>setMenu("xbox")} className={menu=="xbox"?"active":""}>Seleccion de Plataforma</a>
-          <li onClick={()=>setMenu("ps5")} className={menu=="ps5"?"active":""}>PS5</li>
-          <li onClick={()=>setMenu("ns")} className={menu=="nintendo_switch"?"active":""}>Nintendo Switch</li>
-          <li onClick={()=>setMenu("other")} className={menu=="other"?"active":""}>Other</li>
         </ul>
         <div className='navbar-right'>
             <div className='navbar-search-icon'>

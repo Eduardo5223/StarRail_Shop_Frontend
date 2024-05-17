@@ -1,11 +1,13 @@
-import React, {useContext} from 'react'
-import './CartItems.css'
-import { StoreContext } from '../../context/StoreContext'
-import { assets } from '../../assets/assets'
+import React, { useContext } from 'react';
+import './CartItems.css';
+import { StoreContext } from '../../context/StoreContext';
+import { assets } from '../../assets/assets';
 
-const Cartitems = () => {
+const CartItems = () => {
     const { getTotalCarAmount, cartItems, prod_list, removeFromCart } = useContext(StoreContext);
     
+    const imageUrlBase = 'http://localhost:5000/images/';
+
     return (
         <div className='cartitems'>
             <div className="cartitems-format-main">
@@ -23,7 +25,7 @@ const Cartitems = () => {
                     return (
                         <div key={e._id}>
                             <div className="cartitems-format cartitems-format-main">
-                                <img src={e.image} alt="" className='cartitems-product-icon' />
+                                <img src={`${imageUrlBase}${e.image}`} alt={e.nombre} className='cartitems-product-icon' />
                                 <p>{e.nombre}</p>
                                 <p>{e.sku}</p>
                                 <p>${e.precio}</p>
@@ -32,8 +34,8 @@ const Cartitems = () => {
                                 <img 
                                     className='cartitems-remove-icon' 
                                     src={assets.cross_icon} 
-                                    onClick={() => removeFromCart(e._id)} // Aquí pasamos el id correcto
-                                    alt="" 
+                                    onClick={() => removeFromCart(e._id)} 
+                                    alt="Remove" 
                                 />
                             </div>
                             <hr />
@@ -63,4 +65,4 @@ const Cartitems = () => {
     );
 };
 
-export default Cartitems;
+export default CartItems;
