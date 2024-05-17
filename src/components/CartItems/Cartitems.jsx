@@ -2,10 +2,13 @@ import React, { useContext } from 'react';
 import './CartItems.css';
 import { StoreContext } from '../../context/StoreContext';
 import { assets } from '../../assets/assets';
+import { useNavigate } from 'react-router-dom'
 
 const CartItems = () => {
     const { getTotalCarAmount, cartItems, prod_list, removeFromCart } = useContext(StoreContext);
     
+    const navigate = useNavigate();
+
     const imageUrlBase = 'http://localhost:5000/images/';
 
     return (
@@ -58,7 +61,7 @@ const CartItems = () => {
                             <p>${getTotalCarAmount()}</p>
                         </div>
                     </div>
-                    <button>Proceder a Pagar</button>
+                    <button onClick={()=>navigate('/order')}>Proceder a Pagar</button>
                 </div>
             </div>
         </div>
